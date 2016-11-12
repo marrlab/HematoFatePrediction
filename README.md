@@ -3,5 +3,22 @@
 Code accompanying the publication
 
 **Prospective identification of hematopoietic lineage choice by deep learning**
- *Felix Buggenthin1,*, Florian Buettner1,2,*, Philipp S Hoppe3,4, Max Endele3, Manuel Kroiss1,5, Michael Strasser1, Michael Schwarzfischer1, Dirk Loeffler3,4, Konstantinos D Kokkaliaris3,4, Oliver Hilsenbeck3,4, Timm Schroeder3,4,†, Fabian J Theis1,5,†, Carsten Marr1,†*
+ *Felix Buggenthin\*, Florian Buettner\*, Philipp S Hoppe, Max Endele, Manuel Kroiss, Michael Strasser, Michael Schwarzfischer, Dirk Loeffler, Konstantinos D Kokkaliaris, Oliver Hilsenbeck, Timm Schroeder†, Fabian J Theis†, Carsten Marr†*
  Nature methods, in Revision
+ 
+ 
+ ##Cell detection (MATLAB)
+ Required toolboxes:
+ - Image processing toolbox
+ - Statistics toolbox
+ 
+ 1. Download the example dataset (two positions of experiment 3, full duration, ~10 GB):
+ <LINK MISSING>
+ 2. adjust the path to the dataset in celldetection_metascript.m
+ 3. Execute celldetection metascript
+ 
+ 
+ ##Model training
+ 
+ 
+ ##Model inference
