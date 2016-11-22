@@ -9,8 +9,8 @@ by Felix Buggenthin\*, Florian Buettner\*, Philipp S Hoppe, Max Endele, Manuel K
 Download the data at XXX
  
  
-## Cell detection (requires MATLAB)
- Required MATLAB toolboxes:
+## Cell detection
+ Requires MATLAB and MATLAB toolboxes:
  - Image processing toolbox
  - Statistics toolbox
  
