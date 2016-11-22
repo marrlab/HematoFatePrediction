@@ -48,6 +48,7 @@ params.windowsize = params.constwindowsize;
 params.maxwindowsize = 4*params.constwindowsize;
 params.dowatershed = 0;
 params.growwindow = 10;
+
 params.normalize = 0;
 
 params.patchsize = 41;
@@ -66,7 +67,7 @@ for c = unicells
     if ~exist([params.outpath '/cell_' num2str(c) '.mat'],'file')
         [Is_c_centered,Iorgs_c_centered,bws_c_centered,cellsizes, cellspeeds, type, label] = identifyCellsFromTracks(track,c,params);
         s = warning('error', 'MATLAB:save:sizeTooBigForMATFile');
-        save([params.outpath '/cell_' num2str(c) '.mat'],'Is_c_centered','Iorgs_c_centered','bws_c_centered','cellsizes','cellspeeds', 'type', 'label','params','-v7.3');
+        save([params.outpath '/cell_' num2str(c) '.mat'],'Is_c_centered','Iorgs_c_centered','bws_c_centered','cellsizes','cellspeeds', 'label','params','-v7.3');
         disp('Saved.')
     else
         fprintf('Found Cell %i\n',c)
