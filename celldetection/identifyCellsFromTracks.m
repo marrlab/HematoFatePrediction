@@ -1,4 +1,4 @@
-function [Is_c_centered,Iorgs_c_centered,bws_c_centered, cellsizes, cellspeeds] = identifyCellsFromTracks(track,cellnr,params)
+function [Is_c_centered,Iorgs_c_centered,bws_c_centered, cellsizes, cellspeeds, type, label] = identifyCellsFromTracks(track,cellnr,params)
 
 if params.doplot
     figure(1);
@@ -35,7 +35,7 @@ absoluteY = NaN(size(tprange));
 idx = 1;
 
 %iterate over all tracked timepoints
-for t = tprange%(1:5:end)
+for t = tprange%(1:10:end)
     j = find(t == celltrack.timepoint);
     fprintf('\nProcessing cell %i - timepoint %i of %i\n',cellnr,find(t==tprange),size(tprange,2));
     
@@ -307,35 +307,13 @@ for t = tprange%(1:5:end)
 end
 cellspeeds = computeCellSpeed(absoluteX,absoluteY, celltrack.absoluteTime);
 
-assert(numel(unique(celltrack.invtype_alt)) == 1)
-invtype_alt = unique(celltrack.invtype_alt);
-
-switch invtype_alt
-    case -1
-        invtypeString = 'COMMITED';
+type = unique(celltrack.type);
+switch type
     case 1
-        invtypeString = 'MEP';
+        label = 'MEP';
     case 2
-        invtypeString = 'GMP';
-    case 3
-        invtypeString = 'BOTH';
-    case 0
-        invtypeString = 'NOTHING';
+        label = 'GMP';
 end
-try
-    [~,outliers,~,~] = getErrorAndOutliers(cellsizes);
-catch me
-    outliers = NaN(size(cellsizes));
-end
-
-end
-
-function [SSE,outlier,lambda,bsplineobj] = getErrorAndOutliers(cellsizes)
-
-yi_interp = interpolateTrajectory(cellsizes,'nearest');
-xi = 1:numel(yi_interp);
-[~,SSE,bsplineobj,lambda,outlier] = smoothTrajectoryWoLambda(xi',yi_interp);
-
 end
 
 function [absXcorr,absYcorr] = computeAbsoluteCoordinates(oldx, oldy, centroid, absoluteX, absoluteY, mperp)
