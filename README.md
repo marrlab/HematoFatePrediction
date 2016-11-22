@@ -37,7 +37,7 @@ In addition to Model training is perfromed in two steps. First, a CNN is trained
 We provide the caffe model specification for training the model in `CNN_train_test.prototxt` which, along with the solver specifications detaied in `CNN_solver.prototxt`can be used to train the CNN. We further provide a fully trained model and solverstate, allowing users to fine-tune models for specific applications. After training, the CNN is used to derive patch-specific features. We provide the extracted features for all experiments as a resource that can be downloaded [here]().
 
  Next, these CNN-based features are used as input for training an RNN in order to obtain cell-specific lineage scores. 
- RNN training is illustrated in the python script `train_conv.py`. 
+ RNN training is illustrated in the python script [`train_conv.py`](https://github.com/QSCD/HematoFatePrediction/blob/master/cellprediction/py/train_conv.py). 
 
 
 
