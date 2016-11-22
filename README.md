@@ -1,13 +1,16 @@
-# HematoFatePrediction
+# HSPC Fate Prediction
 
-Code accompanying the publication
+Code and data accompanying 
 
 **Prospective identification of hematopoietic lineage choice by deep learning**
- *Felix Buggenthin\*, Florian Buettner\*, Philipp S Hoppe, Max Endele, Manuel Kroiss, Michael Strasser, Michael Schwarzfischer, Dirk Loeffler, Konstantinos D Kokkaliaris, Oliver Hilsenbeck, Timm Schroeder†, Fabian J Theis†, Carsten Marr†*, in Revision.
+
+by Felix Buggenthin\*, Florian Buettner\*, Philipp S Hoppe, Max Endele, Manuel Kroiss, Michael Strasser, Michael Schwarzfischer, Dirk Loeffler, Konstantinos D Kokkaliaris, Oliver Hilsenbeck, Timm Schroeder†, Fabian J Theis†, Carsten Marr†, 
+
+Download the data at XXX
  
  
-## Cell detection (MATLAB)
- Required toolboxes:
+## Cell detection
+ Requires MATLAB and MATLAB toolboxes:
  - Image processing toolbox
  - Statistics toolbox
  
