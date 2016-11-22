@@ -65,7 +65,7 @@ unicells = unique(track.cellNr);
 for c = unicells
     %compute the cell or load it if it was already computed
     if ~exist([params.outpath '/cell_' num2str(c) '.mat'],'file')
-        [Is_c_centered,Iorgs_c_centered,bws_c_centered,cellsizes, cellspeeds, type, label] = identifyCellsFromTracks(track,c,params);
+        [Is_c_centered,Iorgs_c_centered,bws_c_centered,cellsizes, cellspeeds, label] = identifyCellsFromTracks(track,c,params);
         s = warning('error', 'MATLAB:save:sizeTooBigForMATFile');
         save([params.outpath '/cell_' num2str(c) '.mat'],'Is_c_centered','Iorgs_c_centered','bws_c_centered','cellsizes','cellspeeds', 'label','params','-v7.3');
         disp('Saved.')
