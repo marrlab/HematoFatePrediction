@@ -45,10 +45,32 @@ def extract(pretrained, model_file,input_image_test,displacement_test):
 
 #def extractFeatures(pretrained=PRETRAINED, model_file=MODEL_FILE. im_list = im_list)
 #	feat	
+def load_pickle(pickle_file):
+
+	fpickle = open(pickle_file, 'r')
+	input_image = pickle.load(fpickle)
+	lab = pickle.load(fpickle)
+	mov = pickle.load(fpickle)
+	cellID = pickle.load(fpickle)
+	fpickle.close()
+
+	res = {}
+	res['mov'] = mov
+	res['im'] = input_image
+	res['label'] = lab
+	res['cellIDs'] = 'Cell'+cellID[0][0].split('_')[5][4:]
+	return res
 
 
-def mat2dict(mat_files):
-	res_list = []
+
+def load_mat(mat_files):
+	res = {}
+	res['mov'] = []
+	res['im'] = []
+	res['label'] = []
+	res['cellIDs'] = []
+
+
 	for mat_file in mat_files:
 		mat = h5py.File(mat_file, 'r')
 		matX = mat['Is_c_centered'].value
@@ -83,13 +105,43 @@ def mat2dict(mat_files):
 		mov_test/=mov_test.std(0)
 		np.reshape(mov_test, (len(X),1)).shape	
 
-		res = {}
-		res['mov'] = mov_test
-		res['im'] = X
-		res['label'] = lab
+		res['mov'].append(mov_test)
+		res['im'].append(X)
+		res['label'].append(lab[0])
+		res['cellIDs'].append(mat_file.split('/')[2].split('.')[0])
 
-		res_list.append(res)
-	return res_list
+
+	return res
+
+
+def plotPerfromance(predictions, labels, curve_type='ROC'):
+	assert(curve_type in ['ROC', 'PR'])
+	
+	if curve_type=='ROC':
+		auc = metrics.roc_auc_score(labels, predictions) 
+
+		fpr, tpr, _ = metrics.roc_curve(labels, predictions)
+		roc_auc = metrics.auc(fpr, tpr)
+		plt.plot(fpr, tpr, lw=1, color='navy',
+		         label='ROC curve')			
+		plt.xlabel('FPR')
+		plt.ylabel('TPR')
+		plt.title('AUC = {0:0.2f}'.format(auc))
+
+	else:
+		precision, recall, _ = metrics.precision_recall_curve(labels,predictions)
+		plt.plot(recall, precision, lw=1, color='navy',
+		         label='Precision-Recall curve')
+		plt.xlabel('Recall')
+		plt.ylabel('Precision')
+
+
+	plt.ylim([0.0, 1.05])
+	plt.xlim([0.0, 1.0])
+	plt.legend(loc="lower left")
+	plt.show()
+
+
 
 if __name__ =="__main__":
 	film_tr = sys.argv[1]
