@@ -21,21 +21,20 @@ Download the data at XXX
  
 ## Predicting cell-specific lineage scores
 Required software:
-* caffe
+* caffe ([this fork](https://github.com/flophys/caffe) allowing for prediction with concatenation layer) 
 * python 2.7
 * theano, h5py
 
-Based on the image patches generated using the celldetection script along with the displacemnt feature, our models can be applied to obtain cell-specific predictions of lineage choice. We illustrate the workflow in an ipython notebook that can be viewed [interactively]().  This workflow includes processing of image patches, the extraction of convoluational neural network (CNN)-based patch-specific features as well as the final prediction of lineage choice using a recurent neural network (RNN).
+Based on the image patches generated using the celldetection script along with the displacemnt feature, our models can be applied to obtain cell-specific predictions of lineage choice. We illustrate the workflow in an ipython notebook that can be viewed [interactively](http://nbviewer.ipython.org/github/QSCD/HematoFatePrediction/blob/master/cellprediction/Predict_cell_fates.ipynb).  This workflow includes processing of image patches, the extraction of convoluational neural network (CNN)-based patch-specific features as well as the final prediction of lineage choice using a recurent neural network (RNN).
  
 ## Training
 Required software:
-* caffe
+* caffe ([this fork](https://github.com/flophys/caffe) for prediction with concatenation layer) 
 * python 2.7
 * theano, scikit-learn, h5py
 
 In addition to Model training is perfromed in two steps. First, a CNN is trained based on the image patched generated using the celldetection script along with the displacemnt feature.
-We provide the caffe model specification for training the model in `CNN_train_test.prototxt` which, along with the solver specifications detaied in `CNN_solver.prototxt`can be used to train the CNN. We provide fully trained models (for all rounds (?)) and solverstates, allowing users to fine-tune models for specific applications. 
-After training, the CNNs are used to derive patch-specific features. We provide the extracted features for all experiments as a resource that can be downloaded [here]().
+We provide the caffe model specification for training the model in `CNN_train_test.prototxt` which, along with the solver specifications detaied in `CNN_solver.prototxt`can be used to train the CNN. We further provide a fully trained model and solverstate, allowing users to fine-tune models for specific applications. After training, the CNN is used to derive patch-specific features. We provide the extracted features for all experiments as a resource that can be downloaded [here]().
 
  Next, these CNN-based features are used as input for training an RNN in order to obtain cell-specific lineage scores. 
  RNN training is illustrated in the python script `train_conv.py`. 
