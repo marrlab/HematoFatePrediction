@@ -1,6 +1,6 @@
-# HematoFatePrediction
+# HSPC Fate Prediction
 
-Code accompanying the publication
+Code and data accompanying the publication
 
 **Prospective identification of hematopoietic lineage choice by deep learning**
  *Felix Buggenthin\*, Florian Buettner\*, Philipp S Hoppe, Max Endele, Manuel Kroiss, Michael Strasser, Michael Schwarzfischer, Dirk Loeffler, Konstantinos D Kokkaliaris, Oliver Hilsenbeck, Timm Schroeder†, Fabian J Theis†, Carsten Marr†*, in Revision.
