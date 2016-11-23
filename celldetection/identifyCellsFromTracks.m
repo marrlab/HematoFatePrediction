@@ -1,4 +1,4 @@
-function [Is_c_centered,Iorgs_c_centered,bws_c_centered, cellsizes, cellspeeds, label] = identifyCellsFromTracks(track,cellnr,params)
+function [Is_c_centered,Iorgs_c_centered,bws_c_centered, cellsizes, cellspeeds, label, missingTps] = identifyCellsFromTracks(track,cellnr,params)
 
 if params.doplot
     figure(1);
@@ -308,16 +308,13 @@ end
 cellspeeds = computeCellSpeed(absoluteX,absoluteY, celltrack.absoluteTime);
 
 type = unique(celltrack.type);
-invtype = unique(celltrack.invtype_alt);
+
 if type == 1
         label = 'MEP';
 elseif type == 22
         label = 'GMP';
-elseif invtype == 1
-    label = 'MEP';
-elseif invtype == 2
-    label = 'GMP';
 end
+missingTps = (~cellfun(@(x) isa(x,'double'),Is_c_centered) | cellfun(@(x) numel(x) == 1,Is_c_centered));
 end
 
 function [absXcorr,absYcorr] = computeAbsoluteCoordinates(oldx, oldy, centroid, absoluteX, absoluteY, mperp)
