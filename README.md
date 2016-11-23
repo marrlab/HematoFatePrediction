@@ -1,4 +1,4 @@
-# HSPC Fate Prediction
+# Hemato Fate Prediction
 
 Code and data accompanying 
 
