@@ -25,7 +25,7 @@ Steps:
 Required software:
 * caffe ([this fork](https://github.com/flophys/caffe) allowing for prediction with concatenation layer) 
 * python 2.7
-* theano, h5py
+* theano>=0.8.2, scikit-learn>=0.18.1, h5py>=2.6.0 
 
 Based on the image patches generated using the celldetection script along with the displacemnt feature, our models can be applied to obtain cell-specific predictions of lineage choice. We illustrate the workflow in an ipython notebook that can be viewed [interactively](http://nbviewer.ipython.org/github/QSCD/HematoFatePrediction/blob/master/cellprediction/Predict_cell_fates.ipynb).  This workflow includes processing of image patches, the extraction of convoluational neural network (CNN)-based patch-specific features as well as the final prediction of lineage choice using a recurent neural network (RNN).
  
@@ -33,7 +33,7 @@ Based on the image patches generated using the celldetection script along with t
 Required software:
 * caffe ([this fork](https://github.com/flophys/caffe) for prediction with concatenation layer) 
 * python 2.7
-* theano, scikit-learn, h5py
+* theano>=0.8.2, scikit-learn>=0.18.1, h5py>=2.6.0
 
 To install caffe, please follow these [installation instructions](http://caffe.berkeleyvision.org/installation.html) for your OS. We highly recommend using the [Anaconda framework](https://docs.continuum.io).  
 
