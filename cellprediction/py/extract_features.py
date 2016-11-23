@@ -7,7 +7,7 @@ import matplotlib as mpl
 #if 1:
 import h5py
 import scipy as SP
-mpl.use('Agg')
+mpl.use('nbagg')
 import matplotlib.pyplot as plt
 from sklearn import metrics
 import random
@@ -63,6 +63,7 @@ def load_pickle(pickle_file):
 
 
 
+
 def load_mat(mat_files):
 	res = {}
 	res['mov'] = []
@@ -114,7 +115,49 @@ def load_mat(mat_files):
 	return res
 
 
-def plotPerfromance(predictions, labels, curve_type='ROC'):
+
+
+def plotAUC(predictions, labels, anno_file='../processes_data/anno_file.h5', is_annotated=True):
+	plt.pltparams = {'backend': 'pdf',
+              'axes.labelsize': 13,
+              'font.size': 12,
+              'legend.fontsize': 13,
+              'xtick.labelsize': 12,
+              'ytick.labelsize': 12,
+              'text.usetex': False}
+
+	mat = h5py.File(anno_file, 'r')
+	if is_annotated==True:
+		gens = mat['anno']['known'][:]
+		plt_gen = SP.arange(3)
+	else:
+		gens = mat['anno']['latent'][:]
+		plt_gen = SP.arange(-5,0)
+
+	auc_list = []
+	for gen in plt_gen:
+		is_gen = (gens==gen).ravel()
+		auc_list.append(metrics.roc_auc_score(labels[is_gen==True], predictions[is_gen==True]))
+
+
+	plt.scatter(plt_gen, SP.array(auc_list),c='navy',s=20)
+	plt.xticks(plt_gen,plt_gen.astype('str'),fontsize = 14)
+
+	plt.xlabel('Time (generation wrt marker onset)')
+	plt.ylabel('AUC')
+
+
+
+
+	plt.ylim([0.4, 1.])
+	#plt.xlim([0.0, 1.0])
+	plt.show()
+
+
+
+
+
+def plotPerfromanceCurve(predictions, labels, curve_type='ROC'):
 	assert(curve_type in ['ROC', 'PR'])
 	
 	if curve_type=='ROC':
@@ -138,7 +181,6 @@ def plotPerfromance(predictions, labels, curve_type='ROC'):
 
 	plt.ylim([0.0, 1.05])
 	plt.xlim([0.0, 1.0])
-	plt.legend(loc="lower left")
 	plt.show()
 
 
