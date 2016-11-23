@@ -11,7 +11,7 @@ Download the data at https://hmgubox.helmholtz-muenchen.de:8001/d/ccbfb5f1ac/
  
 ## Cell detection
 Required software:
-* MATLAB 
+* MATLAB (R2014a)
 * MATLAB Image processing toolbox
 * MATLAB Statistics toolbox
 
