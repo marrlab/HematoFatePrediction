@@ -1,4 +1,4 @@
-function [Is_c_centered,Iorgs_c_centered,bws_c_centered, cellsizes, cellspeeds, label, missingTps] = identifyCellsFromTracks(track,cellnr,params)
+function [Is_c_centered,Iorgs_c_centered,bws_c_centered, cellsizes, cellspeeds, type, label, missingTps] = identifyCellsFromTracks(track,cellnr,params)
 
 if params.doplot
     figure(1);
@@ -311,7 +311,7 @@ type = unique(celltrack.type);
 
 if type == 1
         label = 'MEP';
-elseif type == 22
+elseif type == 2
         label = 'GMP';
 end
 missingTps = (~cellfun(@(x) isa(x,'double'),Is_c_centered) | cellfun(@(x) numel(x) == 1,Is_c_centered));
