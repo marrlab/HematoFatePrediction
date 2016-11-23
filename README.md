@@ -10,11 +10,12 @@ Download the data at https://hmgubox.helmholtz-muenchen.de:8001/d/ccbfb5f1ac/
  
  
 ## Cell detection
- Required software:
- - MATLAB 
- - MATLAB Image processing toolbox
- - MATLAB Statistics toolbox
- 
+Required software:
+* MATLAB 
+* MATLAB Image processing toolbox
+* MATLAB Statistics toolbox
+
+Steps:
  1. Download the example dataset (two positions of experiment 3, full duration, ~10 GB):
  <LINK MISSING>
  2. adjust the path to the dataset in celldetection_metascript.m
