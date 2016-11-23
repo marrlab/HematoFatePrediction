@@ -47,12 +47,20 @@ def extract(pretrained, model_file,input_image_test,displacement_test):
 #	feat	
 def load_pickle(pickle_file):
 
-	fpickle = open(pickle_file, 'r')
-	input_image = pickle.load(fpickle)
-	lab = pickle.load(fpickle)
-	mov = pickle.load(fpickle)
-	cellID = pickle.load(fpickle)
-	fpickle.close()
+	if sys.version_info >= (3,):  # python 3 compatibility
+		fpickle = open(pickle_file, 'rb')
+		input_image = pickle.load(fpickle, encoding='latin1')
+		lab = pickle.load(fpickle, encoding='latin1')
+		mov = pickle.load(fpickle, encoding='latin1')
+		cellID = pickle.load(fpickle, encoding='latin1')		
+		fpickle.close()
+	else:
+		fpickle = open(pickle_file, 'r')
+		input_image = pickle.load(fpickle)
+		lab = pickle.load(fpickle)
+		mov = pickle.load(fpickle)
+		cellID = pickle.load(fpickle)
+		fpickle.close()
 
 	res = {}
 	res['mov'] = mov
