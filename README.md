@@ -35,6 +35,9 @@ Required software:
 * python 2.7
 * theano, scikit-learn, h5py
 
+To install caffe, please follow these [installation instructions](http://caffe.berkeleyvision.org/installation.html) for your OS. We highly recommend using the [Anaconda framework](https://docs.continuum.io).  
+
+
 In addition to Model training is perfromed in two steps. First, a CNN is trained based on the image patched generated using the celldetection script along with the displacemnt feature.
 We provide the caffe model specification for training the model in `CNN_train_test.prototxt` which, along with the solver specifications detaied in `CNN_solver.prototxt`can be used to train the CNN. We further provide a fully trained model and solverstate, allowing users to fine-tune models for specific applications. After training, the CNN is used to derive patch-specific features. We provide the extracted features for all experiments as a resource that can be downloaded [here]().
 
