@@ -4,15 +4,16 @@ Code and data accompanying
 
 **Prospective identification of hematopoietic lineage choice by deep learning**
 
-by Felix Buggenthin\*, Florian Buettner\*, Philipp S Hoppe, Max Endele, Manuel Kroiss, Michael Strasser, Michael Schwarzfischer, Dirk Loeffler, Konstantinos D Kokkaliaris, Oliver Hilsenbeck, Timm Schroeder†, Fabian J Theis†, Carsten Marr†, 
+by Felix Buggenthin\*, Florian Buettner\*, Philipp S Hoppe, Max Endele, Manuel Kroiss, Michael Strasser, Michael Schwarzfischer, Dirk Loeffler, Konstantinos D Kokkaliaris, Oliver Hilsenbeck, Timm Schroeder†, Fabian J Theis†, Carsten Marr† 
 
-Download the data at XXX
+Download the data at https://hmgubox.helmholtz-muenchen.de:8001/d/ccbfb5f1ac/
  
  
 ## Cell detection
- Requires MATLAB and MATLAB toolboxes:
- - Image processing toolbox
- - Statistics toolbox
+ Required software:
+ - MATLAB 
+ - MATLAB Image processing toolbox
+ - MATLAB Statistics toolbox
  
  1. Download the example dataset (two positions of experiment 3, full duration, ~10 GB):
  <LINK MISSING>
