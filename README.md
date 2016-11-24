@@ -27,8 +27,8 @@ Required software:
 * python 2.7
 * theano>=0.8.2, scikit-learn>=0.18.1, h5py>=2.6.0 
 
-### Predicting cell-specific lineage scores
-Based on the image patches generated using the celldetection script along with the displacemnt feature, our models can be applied to obtain cell-specific predictions of lineage choice. We illustrate the workflow in an ipython notebook that can be viewed [interactively](http://nbviewer.ipython.org/github/QSCD/HematoFatePrediction/blob/master/cellprediction/Predict_cell_fates.ipynb).  This workflow includes processing of image patches, the extraction of convoluational neural network (CNN)-based patch-specific features as well as the final prediction of lineage choice using a recurent neural network (RNN).
+### Predicting lineage scores
+Based on the image patches generated using the celldetection script along with the displacemnt feature, our models can be applied to obtain cell-specific predictions of lineage choice. We illustrate the workflow in an ipython notebook that can be viewed [interactively](http://nbviewer.ipython.org/github/QSCD/HematoFatePrediction/blob/master/cellprediction/Predict_cell_fates.ipynb).  This workflow includes processing of image patches, the extraction of convoluational neural network (CNN)-based patch-specific features as well as the final prediction of cell-specific lineage scores using a recurent neural network (RNN).
  
 ### Training the networks
 Required software:
