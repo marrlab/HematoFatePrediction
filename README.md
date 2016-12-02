@@ -16,9 +16,9 @@ Required software:
 * MATLAB Statistics toolbox
 
 Steps:
- 1. Download the example dataset Rawdata_buggenthin_buettner_naturemethods2016 (two positions of experiment 3, ~10 GB) from the link above
- 2. Adjust the path to the dataset in celldetection_metascript.m
- 3. Execute celldetection metascript
+ 1. Download the dataset Rawdata_buggenthin_buettner_naturemethods2016 (two exemplary positions of experiment 3, ~10 GB) from the link above
+ 2. Adjust the path to the dataset in celldetection_metascript.m in our repository
+ 3. Execute celldetection_metascript.m
  
 ## Cell prediction
 Required software:
