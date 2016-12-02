@@ -38,8 +38,8 @@ Required software:
 To install caffe, please follow these [installation instructions](http://caffe.berkeleyvision.org/installation.html) for your OS. We highly recommend using the [Anaconda framework](https://docs.continuum.io).  
 
 
-Model training is perfromed in two steps. First, a CNN is trained based on the image patched generated using the celldetection script along with the displacemnt feature.
-We provide the caffe model specification for training the model in `CNN_train_test.prototxt` which, along with the solver specifications detaied in `CNN_solver.prototxt`can be used to train the CNN. We further provide a fully trained model and solverstate, allowing users to fine-tune models for specific applications. After training, the CNN is used to derive patch-specific features.
+Model training is performed in two steps. First, a CNN is trained based on the image patches generated using the celldetection_metascript.m along with the displacemnt feature.
+We provide the caffe model specification for training the model in `CNN_train_test.prototxt` which, along with the solver specifications detaied in `CNN_solver.prototxt` can be used to train the CNN. We further provide a fully trained model and solverstate, allowing users to fine-tune models for specific applications. After training, the CNN is used to derive patch-specific features.
 
  Next, these CNN-based features are used as input for training an RNN in order to obtain cell-specific lineage scores. 
  RNN training is illustrated in the python script [`train_conv.py`](https://github.com/QSCD/HematoFatePrediction/blob/master/cellprediction/py/train_conv.py). 
