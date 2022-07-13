@@ -6,7 +6,9 @@ Code and data accompanying
 
 by Felix Buggenthin\*, Florian Buettner\*, Philipp S Hoppe, Max Endele, Manuel Kroiss, Michael Strasser, Michael Schwarzfischer, Dirk Loeffler, Konstantinos D Kokkaliaris, Oliver Hilsenbeck, Timm Schroeder†, Fabian J Theis†, Carsten Marr† 
 
-Download the required data from https://hmgubox.helmholtz-muenchen.de:8001/d/ccbfb5f1ac/
+published in Nature Methods in 2017 (dOi:10.1038/nmeth.4182)
+
+Download the required data from https://drive.google.com/file/d/1j10HeL87CIkdvHzC-98IUt-IUh9XHHTb/view?usp=sharing
  
  
 ## Cell detection
