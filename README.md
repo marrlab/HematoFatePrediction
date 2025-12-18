@@ -9,7 +9,7 @@ by Felix Buggenthin\*, Florian Buettner\*, Philipp S Hoppe, Max Endele, Manuel K
 published in Nature Methods in 2017
 DOI:10.1038/nmeth.4182
 
-Download the required data from https://drive.google.com/file/d/1j10HeL87CIkdvHzC-98IUt-IUh9XHHTb/view?usp=sharing
+Download the required data from https://doi.org/10.82296/hmgu-nefeli.6qk3j-rsn72
  
  
 ## Cell detection
